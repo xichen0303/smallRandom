@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('../src/icon/game/iconfont.woff2') format('woff2'),
+      url('../src/icon/game/iconfont.woff') format('woff'),
+      url('../src/icon/game/iconfont.ttf') format('truetype');
+}
+
+/* 根据第三方字体图标库编写 */
+/* 举例：fa 就是 prefixClass 的值，下面的的图标 css class 命名都要用 fa- 开头  */
+.fa {
+  display: inline-block;
+  /* 以下的 font 与上面 @font-face 的 font-family 要一致*/
+  font: normal normal normal 14px/1 iconfont;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-game:before {
+  content: "\e618";
+}
