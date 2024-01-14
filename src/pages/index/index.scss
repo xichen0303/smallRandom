@@ -1,4 +1,26 @@
+
+.index {
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .topContent {
-    height: 20px;
-    background-color: aquamarine;
+  height: 50PX;
+  background-color: aquamarine;
+}
+
+.middleContent {
+  flex: 1;
+}
+
+.bottomContent {
+  height: 50PX;
+  background-color: bisque;
+  margin-bottom: 100PX;
 }
