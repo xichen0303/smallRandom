@@ -11335,10 +11335,10 @@ tar-stream@^1.5.2:
     to-buffer "^1.1.1"
     xtend "^4.0.0"
 
-taro-ui@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.npmmirror.com/taro-ui/-/taro-ui-3.2.2.tgz#9002833c0933724286e4bb5a3548bf57125c0aa5"
-  integrity sha512-/4OJ+4NdYWLE4uLdUjm0JOWSuwT9adcpko+UCMDREgeopBRwLpARyeqraL39yHl8wHZaRZXm4JKoOpnLFbRpSg==
+taro-ui@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.npmmirror.com/taro-ui/-/taro-ui-3.3.0.tgz#2d10e6f53baeacacf1990a07107fab3d65da13f8"
+  integrity sha512-M4tf2OEy1BzmeFyvF0kFOgzzW1Lc86TlQ5UwZh4cNMkuViqGId/DLqY0iMlqAjfXstRn0x4HaFFw91xfLqkPzg==
   dependencies:
     classnames "^2.2.6"
     dayjs "^1.7.7"
