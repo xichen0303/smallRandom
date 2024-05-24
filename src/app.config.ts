@@ -2,6 +2,7 @@ export default defineAppConfig({
   pages: [
     'pages/index/index',
     'pages/random/index',
+    'pages/pianoBlock/index',
   ],
   window: {
     backgroundTextStyle: 'light',

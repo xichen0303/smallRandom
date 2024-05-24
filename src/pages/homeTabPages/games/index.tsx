@@ -1,6 +1,6 @@
 import { View, Text } from '@tarojs/components';
 import { useReactive } from 'ahooks';
-import { useLoad } from '@tarojs/taro';
+import Taro, { useLoad } from '@tarojs/taro';
 import { AtGrid } from 'taro-ui';
 import './index.scss'
 
@@ -9,6 +9,7 @@ const Index = () => {
   const listData = [
     {
       // image: '',
+      page: 'pianoBlock',
       value: '别踩白块'
     },
     {
@@ -21,8 +22,11 @@ const Index = () => {
     console.log('Page loaded.');
   })
 
-  const handleClick = () => {
-
+  const handleClick = (item) => {
+    console.log(item, 'item')
+    Taro.navigateTo({
+      url: `/pages/${item.page}/index`,
+    })
   }
 
   return (

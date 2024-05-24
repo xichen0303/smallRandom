@@ -1,7 +1,8 @@
 
-
+@import "~taro-ui/dist/style/components/input.scss";
+@import "~taro-ui/dist/style/components/icon.scss";
+$color: #7FB8ED;
 .index {
-  background-color: yellow;
   width: 100%;
   height: 100%;
   display: flex;
@@ -9,19 +10,68 @@
 }
 
 .random-config-content {
-  background-color: antiquewhite;
-  width: 100%;
-  height: 400px;
+  height: 300px;
+  padding: 30px 60px 0;
+}
+
+.random-config-content-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.random-config-content-item-input {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 180px;
+  height: 40px;
+  padding: 0 20px;
 }
 
 .rendom-result-content {
-  background-color: aquamarine;
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rendom-result-content-number {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.rendom-result-content-text {
   width: 100%;
+  font-size: 42px;
+  color: $color;
+  text-align: center;
+  overflow-wrap: break-word;
 }
 
 .rendom-button-content {
-  background-color: cadetblue;
-  width: 100%;
   height: 400px;
+  padding: 30px 60px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.rendom-button {
+  width: 200px;
+  margin: 0;
+  height: 90px
+}
+
+.buttonColor {
+  color: #FFF;
+  background-color: $color;
+}
+
+.hoverColor {
+  color: #FFF;
+  background-color: rgb(127, 184, 237, 0.8);
 }

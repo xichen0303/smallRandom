@@ -53,6 +53,7 @@
     "@tarojs/shared": "3.6.22",
     "@tarojs/taro": "3.6.22",
     "ahooks": "^3.7.8",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.0.0",
     "taro-ui": "3.3.0"

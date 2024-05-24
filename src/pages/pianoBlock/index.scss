@@ -1,0 +1,63 @@
+
+.index {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.score {
+  width: 100%;
+  height: 80px;
+  background-color: #ddd;
+  text-align: center;
+}
+
+.content {
+  flex: 1;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.mian {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+}
+
+.row-view {
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.1px solid #000;
+}
+
+.block-view {
+  flex: 1;
+  border-left: 0.1px solid #000;
+}
+
+.blackBlock {
+  background-color: #000;
+}
+
+.whiteBlock {
+  background-color: #fff;
+}
+
+.greyBlock {
+  background-color: #aaa;
+}
+
+.redBlock {
+  background-color: red;
+}
+
+
+
+.bottom {
+  width: 100%;
+  height: 80px;
+  background-color: #ddd;
+}
