@@ -12,10 +12,10 @@ const Index = () => {
       page: 'pianoBlock',
       value: '别踩白块'
     },
-    {
-      // image: '',
-      value: '不知道'
-    },
+    // {
+    //   // image: '',
+    //   value: '不知道'
+    // },
   ]
 
   useLoad(() => {

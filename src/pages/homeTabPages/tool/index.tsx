@@ -14,11 +14,13 @@ const Index = () => {
     },
     {
       // image: '',
-      value: '小转盘'
+      page: 'turnTable',
+      value: '大转盘'
     },
     {
       // image: '',
-      value: 'lalala'
+      page: 'wordsScroll',
+      value: '字幕滚动'
     },
   ]
 

@@ -15,12 +15,14 @@ const Index = () => {
     blockList: number[][];
     positonY: number;
     isRunning: boolean;
+    currentStatus: string; // running; pause; finish
   }>({
     score: 0,
     speed: 20,
     blockList: [],
     positonY: 600,
     isRunning: false,
+    currentStatus: 'finish',
   })
 
   useLoad(() => {
@@ -108,14 +110,41 @@ const Index = () => {
     })
   }
 
+  const countdown = (count: number) => {
+    let countNo = count;
+    const interval = setInterval(() => {
+      console.log(countNo, 'countNo')
+      Taro.showToast({
+        title: countNo + '',
+        icon: 'none',
+        duration: 1000
+      })
+      countNo = countNo - 1;
+    }, 1000)
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => {
+        clearInterval(interval);
+        clearTimeout(timeout);
+        resolve({ msg: '倒计时结束' });
+      }, (count + 1) * 1000)
+    })
+  }
+
   // 开始
   const onStart = useCallback(() => {
     state.score = 0;
     state.positonY = 600;
     init();
-    intervalTimer.current = setInterval(() => {
-      state.positonY = state.positonY - 5;
-    }, 20);
+    (async () => {
+      const res = await countdown(3);
+      console.log(res, 'resssss')
+
+      intervalTimer.current = setInterval(() => {
+        state.positonY = state.positonY - 5;
+      }, 20);
+    })();
+    // return;
+    
   }, [])
 
 
@@ -129,17 +158,18 @@ const Index = () => {
   // 结束
   const onEnd = () => {
     clearInterval(intervalTimer.current);
+    state.currentStatus = 'finish';
     Taro.showModal({
       title: '游戏结束',
-      // content: '开始游戏',
+      content: `游戏得分：${state.score}`,
       confirmText: '重新开始',
       cancelText: '退出游戏',
       success: function (res) {
         if (res.confirm) {
-          console.log('用户点击确定')
+          // ('用户点击确定')
           onStart();
         } else if (res.cancel) {
-          console.log('用户点击取消')
+          // ('用户点击取消')
           Taro.navigateBack({
             delta: 1
           })
@@ -186,12 +216,13 @@ const Index = () => {
           }
         </View>
       </View>
-      <Button className="bottom" onTap={() => {
+      {state.currentStatus === 'finish' && <Button className="bottom" onTap={() => {
         onStart();
-      }}>继续</Button>
-      <Button className="bottom" onTap={() => {
+      }}>开始</Button>}
+      {/* {state.currentStatus === 'running' && <Button className="bottom" onTap={() => {
+        state.currentStatus = 'pause';
         clearInterval(intervalTimer.current);
-      }}>暂停</Button>
+      }}>暂停</Button>} */}
     </View>
   )
 }
